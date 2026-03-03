@@ -4,41 +4,35 @@
 
 @layer base {
   :root {
-    --background: 30 8% 96%;
-    --foreground: 20 10% 12%;
+    --background: 220 18% 10%;
+    --foreground: 38 25% 88%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 20 10% 12%;
+    --card: 220 16% 13%;
+    --card-foreground: 38 25% 88%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 10% 12%;
+    --popover: 220 16% 13%;
+    --popover-foreground: 38 25% 88%;
 
-    --primary: 350 40% 22%;
-    --primary-foreground: 30 20% 96%;
+    --primary: 38 65% 60%;
+    --primary-foreground: 220 18% 10%;
 
-    --secondary: 150 15% 20%;
-    --secondary-foreground: 30 20% 96%;
+    --secondary: 220 14% 18%;
+    --secondary-foreground: 38 25% 80%;
 
-    --muted: 30 10% 92%;
-    --muted-foreground: 20 8% 45%;
+    --muted: 220 14% 16%;
+    --muted-foreground: 220 10% 50%;
 
-    --accent: 38 60% 55%;
-    --accent-foreground: 20 10% 12%;
+    --accent: 38 65% 60%;
+    --accent-foreground: 220 18% 10%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 30 12% 85%;
-    --input: 30 12% 85%;
-    --ring: 350 40% 22%;
+    --border: 220 14% 20%;
+    --input: 220 14% 20%;
+    --ring: 38 65% 60%;
 
     --radius: 0.25rem;
-
-    --lib-burgundy: 350 40% 22%;
-    --lib-forest: 150 25% 18%;
-    --lib-parchment: 38 45% 90%;
-    --lib-gold: 38 70% 52%;
-    --lib-ink: 220 20% 12%;
   }
 }
 
@@ -74,18 +68,17 @@
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
 @keyframes scale-in {
   from {
     opacity: 0;
-    transform: scale(0.96);
+    transform: scale(0.97);
   }
   to {
     opacity: 1;
@@ -93,83 +86,44 @@
   }
 }
 
-@keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .animate-fade-in {
   animation: fade-in 0.35s ease-out forwards;
 }
-
 .animate-scale-in {
   animation: scale-in 0.25s ease-out forwards;
 }
 
-.animate-slide-up {
-  animation: slide-up 0.4s ease-out forwards;
-}
-
-/* Stagger delays */
-.delay-1 {
-  animation-delay: 0.05s;
-}
-.delay-2 {
-  animation-delay: 0.1s;
-}
-.delay-3 {
-  animation-delay: 0.15s;
-}
-.delay-4 {
-  animation-delay: 0.2s;
-}
-.delay-5 {
-  animation-delay: 0.25s;
-}
-
-/* Library texture */
+/* Parchment-style block — now adapted for dark */
 .parchment-bg {
-  background-color: hsl(38, 35%, 93%);
-  background-image: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 27px,
-    hsl(38, 30%, 85%) 27px,
-    hsl(38, 30%, 85%) 28px
+  background: linear-gradient(
+    135deg,
+    hsl(220, 16%, 15%) 0%,
+    hsl(220, 14%, 17%) 100%
   );
+  border-left: 3px solid hsl(38, 55%, 45%);
 }
 
-.book-shadow {
-  box-shadow:
-    3px 3px 0 hsl(350, 40%, 22%),
-    6px 6px 0 hsl(350, 40%, 22%, 0.15);
-}
-
+/* Card hover */
 .card-hover {
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
-
 .card-hover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  border-color: hsl(38, 55%, 35%);
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(30, 10%, 92%);
+  background: hsl(220, 18%, 10%);
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(350, 40%, 30%);
+  background: hsl(38, 40%, 30%);
   border-radius: 3px;
 }
